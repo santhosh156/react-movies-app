@@ -23,7 +23,7 @@ const customStyles = {
 
 const TabContainer = function(props) {
     return(
-    <Typography component="div" style={{padding: 0}}>
+    <Typography component="div" style={{padding: 0, textAlign: 'center'}}>
         {props.children}
     </Typography>
     )
@@ -55,7 +55,7 @@ class Header extends Component {
             <div className="app-header"> 
                 <img src={logo} className='app-logo' alt='logo' />
                 <div className="login-btn">
-                    <Button variant="contained" color="default" onClick={this.openModalHandler}>Login</Button>
+                    <Button variant="contained" color="default" onClick={this.openModalHandler}>LOGIN</Button>
                 </div>
 
                 <Modal  ariaHideApp={false} 
@@ -63,7 +63,7 @@ class Header extends Component {
                         contentLabel='Login' 
                         onRequestClose={this.closeModalHandler}
                         style={customStyles}>
-                    <Tabs value={this.state.value} onChange={this.tabChangeHandler} variant="fullWidth">
+                    <Tabs className="tabs" value={this.state.value} onChange={this.tabChangeHandler} variant="fullWidth">
                         <Tab label="Login" />
                         <Tab label="Register" />
                     </Tabs>
@@ -72,11 +72,13 @@ class Header extends Component {
                             <InputLabel htmlFor="username">Username</InputLabel>
                             <Input id="username" type="text" />
                         </FormControl>
-                        
+                        <br /> <br />
                         <FormControl required>
                             <InputLabel htmlFor="password">Password</InputLabel>
                             <Input id="password" type="password" />
                         </FormControl>
+                        <br /> <br />
+                        <Button variant="contained" color="primary">LOGIN</Button>
                     </TabContainer>
                 </Modal>
             </div>
